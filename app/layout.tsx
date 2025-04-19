@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Sora } from 'next/font/google'
-// import AnimatedCursor from 'react-animated-cursor'
+import AnimatedCursor from 'react-animated-cursor'
 import './globals.css'
 import ResponsiveNav from '@/component/Home/Navbar/ResponsiveNav'
 import Footer from '@/component/Home/Footer'
@@ -27,7 +27,7 @@ export default function RootLayout({
 			className='custom-scrollbar'>
 			<body className={`${font.className} antialiased`}>
 				<div className='hidden md:block'>
-					{/* <AnimatedCursor
+					<AnimatedCursor
 						innerSize={8}
 						outerSize={35}
 						innerScale={2}
@@ -35,7 +35,7 @@ export default function RootLayout({
 						outerAlpha={0}
 						innerStyle={{ backgroundColor: 'white' }}
 						outerStyle={{ border: '3px solid white' }}
-					/> */}
+					/>
 				</div>
 				<ResponsiveNav />
 				{children}

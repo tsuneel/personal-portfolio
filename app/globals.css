@@ -1,26 +1,52 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/preflight.css' layer(base);
+@import 'tailwindcss/utilities.css' layer(utilities);
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@layer components {
+	.nav__link {
+		display: block;
+		position: relative;
+		font-size: medium;
+		width: fit-content;
+		color: white;
+		&::after {
+			display: block;
+			content: '';
+			position: absolute;
+			height: 3px;
+			background-color: yellow;
+			font-weight: 400;
+			width: fit-content;
+			transition: 300ms;
+			--tw-scale-x: 0%;
+			scale: var(--tw-scale-x) var(--tw-scale-y);
+			animation-duration: 300;
+			transform-origin: right;
+			&:hover {
+				scale: var(--tw-scale-x) var(--tw-scale-y);
+				--tw-scale-x: 100%;
+			}
+		}
+	}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+	.text-bg {
+		background-image: linear-gradient(to right, #8750f7 0%, #ffffff 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+	.custom-scrollbar::-webkit-scrollbar {
+		width: 10px;
+		height: 10px;
+	}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	.custom-scrollbar::-webkit-scrollbar-track {
+		background: #44028f;
+	}
+	.custom-scrollbar::-webkit-scrollbar-thumb {
+		background: #c277fa;
+		border-radius: 4px;
+	}
 }

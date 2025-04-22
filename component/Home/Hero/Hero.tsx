@@ -32,7 +32,7 @@ const Hero = () => {
 							data-aos-delay='300'
 							className='md:px-8 md:py-2.5 text-white font-semibold text-sm md:text-lg transition-all duration-200 rounded-lg mt-8 bg-blue-700 hover:bg-blue-900 flex items-center space-x-2'>
 							<a
-								href='/Suneel_Tallapaneni_SDE.docx'
+								href='./public/resume.docx'
 								download='Suneel Tallapaneni.docx'>
 								Resume
 							</a>
